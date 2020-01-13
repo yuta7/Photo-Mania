@@ -1,0 +1,8 @@
+<div class="card" style="width: 20rem;">
+  <%= form_for(@user) do |f| %>
+    <%= f.text_field :name, placeholder: "名前" %>
+    <%= f.email_field :email, placeholder: "メールアドレス" %>
+    <%= f.password_field :password, placeholder: "パスワード" %>
+    <%= f.submit "登録する", class: "btn btn-primary" %>
+  <% end %>
+</div>
