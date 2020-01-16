@@ -27,7 +27,7 @@ $gray-medium-light: #eaeaea;
 /* universal */
 
 body {
-  background-color: #EEEEEE;
+  background-color: #F5FFFA;
 }
 
 /*navbar*/
@@ -45,8 +45,32 @@ body {
 
 .debug_dump {
   clear: both;
-  float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 3px solid #bbb;
+  width: 90%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+.card {
+  margin: 30px auto;
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+
+#error {
+  color: red;
 }

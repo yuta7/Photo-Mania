@@ -1,8 +1,17 @@
-<div class="card" style="width: 20rem;">
-  <%= form_for(@user) do |f| %>
+<% provide(:title, 'Sign up') %>
+
+<section class="card">
+  <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
+  <%= form_for(@user, url: signup_path) do |f| %>
+    <%= render 'shared/error_messages' %>
+     <div class="form-group">   
+       <%= f.label :avatar, "プロフィール画像" %>
+       <%= f.file_field :avatar %>
+     </div>
     <%= f.text_field :name, placeholder: "名前" %>
     <%= f.email_field :email, placeholder: "メールアドレス" %>
     <%= f.password_field :password, placeholder: "パスワード" %>
     <%= f.submit "登録する", class: "btn btn-primary" %>
   <% end %>
-</div>
+</section>
+  

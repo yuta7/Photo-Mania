@@ -7,7 +7,7 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.6'
+gem 'rails', '~> 5.2.3'
 # Use mysql as the database for Active Record
 gem 'mysql2'
 # Use Puma as the app server
@@ -31,12 +31,16 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '3.1.12'
 gem 'bootstrap', '~>4.1.1'
 gem 'jquery-rails'
-
+gem 'carrierwave'
+gem 'activestorage'
+gem 'mini_magick', '~> 4.8'
+gem 'rails-i18n'
+gem 'rails-controller-testing'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger consoleDon't know how to build task 'active_storage:instal
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'

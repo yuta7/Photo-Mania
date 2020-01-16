@@ -1,0 +1,8 @@
+<% provide(:title, @user.name) %>
+<h1>
+  <% if @user.avatar %>  
+  <%#= image_tag @user.avatar %>  
+  <%= image_tag(@user.avatar) if @user.avatar.attached? %>
+<% end %>
+<%= @user.name %>
+</h1>
