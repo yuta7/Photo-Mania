@@ -11,12 +11,19 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6 }
   
   has_one_attached :avatar
-  #validate :image_presence
+  
+  def User.digest(string)
+    cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
+                                                  BCrypt::Engine.cost
+    BCrypt::Password.create(string, cost: cost)
+  end
+  
+  #validate :avatar_presence
 
   #def avatar_presence
     #if avatar.attached?
-      #if !avatar.content_type.in?(%('image/jpeg image/png'))
-        #errors.add(:image,'にはjpegまたはpngファイルを添付してください')
+      #if !avatar.content_type.in?(%('avatar/jpeg image/png'))
+        #errors.add(:avatar,'にはjpegまたはpngファイルを添付してください')
       #end
     #else
       #errors.add(:image, 'ファイルを添付してください')

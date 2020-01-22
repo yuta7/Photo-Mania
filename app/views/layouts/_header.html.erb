@@ -8,9 +8,14 @@
         <div class="collapse navbar-collapse" id="Navber">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active"><a class="nav-link" href="/">Home</a></li>
-            <li class="nav-item active"><a class="nav-link" href="/signup">Sign up</a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">Login</a></li>
-            <li class="nav-item active"><a class="nav-link" href="#">Myacount</a></li>
+            <% if logged_in? %>
+            <%#=Myacountの表示を改善%>
+            <li class="nav-item active"><%= link_to "Myacount", current_user %></li>
+            <li class="nav-item active"><a class="nav-link" href="/logout">Logout</a></li>
+            <% else %>
+            <li class="nav-item active"><a class="nav-link" href="/login">Login</a></li>
+            <li class="nav-item active"><a class="nav-link"href="/signup">Sign up</a></li>
+            <% end %>
           </ul>
           <form class="form-inline my-2 my-lg-0">
             <input type="search" class="form-control mr-sm-2" placeholder="検索..." aria-label="検索...">

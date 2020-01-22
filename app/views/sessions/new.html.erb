@@ -1,0 +1,15 @@
+<% provide(:title, "Log in") %>
+
+<section class="card">
+  <img class="card-img" src="http://webcreatorbox.com/sample/images/bear.jpg" alt="">
+    <%= form_for(:session, url: login_path) do |f| %>
+
+      <%= f.text_field :name, placeholder: "名前" %>
+      <%= f.password_field :password, placeholder: "パスワード" %>
+      <%= f.submit "ログイン", class: "btn btn-primary" %>
+
+    <% end %>
+</section>
+<section class="card">
+    <div>アカウントをお持ちでないですか？<a href="/signup">登録する</a></div>
+</section>
