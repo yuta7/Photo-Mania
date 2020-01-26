@@ -37,6 +37,9 @@ gem 'activestorage'
 gem 'mini_magick', '~> 4.8'
 gem 'rails-i18n'
 gem 'rails-controller-testing'
+gem 'faker', '1.7.3'
+gem 'kaminari', '~> 0.17.0'
+gem 'kaminari-bootstrap', '~> 3.0.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -2,7 +2,8 @@
 <h1>
   <% if @user.avatar %>  
   <%#プロフィール画像のvariuntでrisizeする%>
-  <%= image_tag(@user.avatar) if @user.avatar.attached? %>
+  <%= image_tag @user.avatar.variant(resize: '100x100') if @user.avatar.attached? %>
   <% end %>
 <%= @user.name %>
 </h1>
+<li><%= link_to "Settings", edit_user_path(current_user) %></li>

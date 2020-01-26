@@ -1,0 +1,26 @@
+<% provide(:title, "Edit user") %>
+<h1>プロフィール編集</h1>
+
+<section class="card">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+    <div class="form-group file">
+      <%= image_tag @user.avatar.variant(resize: '100x100') if @user.avatar.attached? %>
+      <%= f.file_field :avatar, placeholder: "プロフィール写真を変更" %>
+      <%= f.submit "送信" %> 
+    </div>
+    
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+      
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    
+    <% end %>
+</section>
